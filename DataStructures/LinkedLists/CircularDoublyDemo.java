@@ -1,7 +1,6 @@
 /**
  * This code is an implementation of Circular Doubly linked lists
- * @author Rhythm Babu Kafle
- * 1/1/2024
+ *
  */
 
 package LinkedLists;
@@ -9,6 +8,7 @@ package LinkedLists;
 class Node {
     Integer data;
     Node prev, next;
+
     Node(Node prev, int data, Node next) {
         this.prev = prev;
         this.data = data;
@@ -19,12 +19,13 @@ class Node {
 
 class CircularDLinkedList {
     Node head, tail;
-    boolean isEmpty () {
+
+    boolean isEmpty() {
         return (head == null) && (tail == null);
     }
 
-    public void insertAtHead (int el) {
-        if(isEmpty()) {
+    public void insertAtHead(int el) {
+        if (isEmpty()) {
             head = tail = new Node(null, el, null);
         } else {
             head = new Node(tail, el, head);
@@ -33,10 +34,10 @@ class CircularDLinkedList {
         }
     }
 
-    public void insertAtTail ( int el ) {
-        if(isEmpty()) {
+    public void insertAtTail(int el) {
+        if (isEmpty()) {
             head = tail = new Node(null, el, null);
-        } else { 
+        } else {
             tail = new Node(tail, el, head);
             tail.prev.next = tail;
             head.prev = tail;
@@ -44,9 +45,9 @@ class CircularDLinkedList {
     }
 
     public void deleteAtHead() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return;
-        } else if( head == tail ) {
+        } else if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
@@ -56,9 +57,9 @@ class CircularDLinkedList {
     }
 
     public void deleteAtTail() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return;
-        } else if( head == tail ) {
+        } else if (head == tail) {
             head = tail = null;
         } else {
             tail = tail.prev;
@@ -67,20 +68,20 @@ class CircularDLinkedList {
         }
     }
 
-    public void printForward () {
+    public void printForward() {
         Node temp = head;
         do {
             System.out.println(temp.data);
             temp = temp.next;
-        } while (temp!=tail.next);
+        } while (temp != tail.next);
     }
 
-    public void printBackward () {
+    public void printBackward() {
         Node temp = tail;
         do {
             System.out.println(temp.data);
             temp = temp.prev;
-        } while (temp!=head.prev);
+        } while (temp != head.prev);
     }
 }
 

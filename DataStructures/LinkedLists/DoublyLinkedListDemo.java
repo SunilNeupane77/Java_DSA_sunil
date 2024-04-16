@@ -1,8 +1,5 @@
 /**
- * This program implements doubly linked list
- * 
- * @author Rhythm Babu Kafle
- * 12/25/2023
+ * circular doubly
  */
 
 package LinkedLists;
@@ -20,12 +17,13 @@ class Node {
 
 class DLinkedList {
     Node head, tail;
-    boolean isEmpty () {
+
+    boolean isEmpty() {
         return (head == null) && (tail == null);
     }
 
-    public void insertAtHead (int el) {
-        if(isEmpty()) {
+    public void insertAtHead(int el) {
+        if (isEmpty()) {
             head = tail = new Node(null, el, null);
         } else {
             head = new Node(null, el, head);
@@ -33,19 +31,19 @@ class DLinkedList {
         }
     }
 
-    public void insertAtTail ( int el ) {
-        if(isEmpty()) {
+    public void insertAtTail(int el) {
+        if (isEmpty()) {
             head = tail = new Node(null, el, null);
-        } else { 
+        } else {
             tail = new Node(tail, el, null);
             tail.prev.next = tail;
         }
     }
 
     public void deleteAtHead() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return;
-        } else if( head == tail ) {
+        } else if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
@@ -54,9 +52,9 @@ class DLinkedList {
     }
 
     public void deleteAtTail() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return;
-        } else if( head == tail ) {
+        } else if (head == tail) {
             head = tail = null;
         } else {
             tail = tail.prev;
@@ -64,17 +62,17 @@ class DLinkedList {
         }
     }
 
-    public void printForward () {
+    public void printForward() {
         Node temp = head;
-        while(temp!=null) {
+        while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
 
-    public void printBackward () {
+    public void printBackward() {
         Node temp = tail;
-        while(temp!=null) {
+        while (temp != null) {
             System.out.println(temp.data);
             temp = temp.prev;
         }
@@ -95,4 +93,3 @@ public class DoublyLinkedListDemo {
         dl.printBackward();
     }
 }
-
