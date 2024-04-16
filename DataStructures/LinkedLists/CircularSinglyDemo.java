@@ -1,8 +1,5 @@
 /**
- * This program implements circular singly linked list
- * 
- * @author Rhythm Babu Kafle
- * 1/1/2024
+ *circular singly
  */
 
 package LinkedLists;
