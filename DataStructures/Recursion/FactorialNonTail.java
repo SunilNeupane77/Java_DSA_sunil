@@ -1,5 +1,5 @@
 /**
- * 
+ * factorial of a number by nontail recursion by sunil Neupane
  */
 
 package Recursion;
