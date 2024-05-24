@@ -1,5 +1,6 @@
 /**
- * 
+ * Multiplication of two number using java recursion
+ -By Sunil Neupane
  */
 
 package Recursion;
