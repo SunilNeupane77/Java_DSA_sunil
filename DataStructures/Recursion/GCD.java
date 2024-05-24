@@ -1,5 +1,5 @@
 /**
- * 
+ * GCD Number in java By Sunil Neupane
  */
 
 package Recursion;
